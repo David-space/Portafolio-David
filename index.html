@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soy David</title>
+<style>
+  /* ===== Variables de color (fáciles de cambiar) ===== */
+  :root {
+    --color-texto: #2d2d2d;
+    --color-texto-suave: #555555;
+    --color-acento: #6c5ce7; /* morado del logo y la ilustración */
+    --color-acento-hover: #5849c4;
+    --color-boton-oscuro: #2d2d2d;
+    --color-boton-oscuro-hover: #4a4a4a;
+    --color-borde: #2d2d2d;
+    --color-fondo: #ffffff;
+    --color-circulo-fondo: #f0f0f0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    overflow-x: hidden;
+  }
+
+  /* ===== NAVBAR ===== */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 80px;
+  }
+
+  .logo {
+    width: 64px;
+    height: 64px;
+    border: 2px solid var(--color-borde);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .logo:hover {
+    transform: rotate(15deg) scale(1.05);
+    color: var(--color-acento);
+    border-color: var(--color-acento);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-size: 17px;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  /* Subrayado animado al pasar el mouse */
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: var(--color-acento);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-acento);
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  /* ===== HERO SECTION ===== */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px 100px;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .hero-text {
+    max-width: 550px;
+  }
+
+  .hero-text h1 {
+    font-size: 64px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: var(--color-texto);
+  }
+
+  .hero-text h1 span.dot {
+    color: var(--color-texto);
+  }
+
+  .hero-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-texto-suave);
+    margin-bottom: 35px;
+  }
+
+  .hero-text p strong {
+    color: var(--color-texto);
+  }
+
+  /* ===== BOTONES ===== */
+  .buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 50px;
+  }
+
+  .btn {
+    padding: 16px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--color-boton-oscuro);
+    color: #fff;
+    border-color: var(--color-boton-oscuro);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-acento);
+    border-color: var(--color-acento);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.35);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-texto);
+    border-color: var(--color-borde);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-acento);
+    color: #fff;
+    border-color: var(--color-acento);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.35);
+  }
+
+  /* ===== REDES SOCIALES ===== */
+  .socials {
+    display: flex;
+    gap: 18px;
+  }
+
+  .social-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--color-boton-oscuro);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+  }
+
+  .social-icon:hover {
+    background: var(--color-acento);
+    transform: translateY(-4px) scale(1.1);
+  }
+
+  /* ===== ILUSTRACIÓN ===== */
+  .hero-illustration {
+    position: relative;
+    width: 600px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .blob {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    background: var(--color-circulo-fondo);
+    border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(3deg); }
+  }
+
+  .laptop {
+    position: relative;
+    z-index: 1;
+    width: 420px;
+    background: #3d3a52;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease;
+  }
+
+  .laptop:hover {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+
+  .laptop-dots {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 15px;
+  }
+
+  .laptop-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-acento);
+  }
+
+  .laptop-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+
+  .laptop-lines div {
+    height: 6px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 3px;
+  }
+
+  .code-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--color-acento);
+    margin: 30px 0;
+    user-select: none;
+  }
+
+  .code-arrows span {
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .code-arrows span:hover {
+    transform: scale(1.3);
+    color: #fff;
+  }
+
+  .person {
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    z-index: 2;
+    font-size: 90px;
+    animation: walk 4s ease-in-out infinite;
+  }
+
+  @keyframes walk {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+  }
+
+  footer {
+    text-align: right;
+    padding: 20px 80px;
+    font-size: 14px;
+    color: var(--color-texto-suave);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .navbar, .hero, footer {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .nav-links {
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero {
+      justify-content: center;
+      text-align: center;
+    }
+    .hero-text h1 {
+      font-size: 42px;
+    }
+    .buttons, .socials {
+      justify-content: center;
+    }
+  }
+
+  /* ===== ABOUT ME SECTION ===== */
+  :root {
+    --color-navy: #2b3a55;
+    --color-fondo-about: #e3e2dd;
+  }
+ 
+  .about-wave {
+    position: relative;
+    background: #3d3a52;
+    height: 130px;
+    width: 100%;
+  }
+ 
+  .about-wave svg {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: block;
+  }
+ 
+  .about {
+    background: var(--color-fondo-about);
+    padding: 80px 80px 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 70px;
+    flex-wrap: wrap;
+  }
+ 
+  .about-photo {
+    width: 420px;
+    max-width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+ 
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+ 
+  .about-photo:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 50px rgba(0,0,0,0.22);
+  }
+ 
+  .about-photo:hover img {
+    transform: scale(1.05);
+  }
+ 
+  .about-content {
+    max-width: 520px;
+  }
+ 
+  .about-content h2 {
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    color: var(--color-texto);
+  }
+ 
+  .about-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--color-texto-suave);
+    margin-bottom: 22px;
+  }
+ 
+  .about-content a {
+    color: var(--color-navy);
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+ 
+  .about-content a:hover {
+    color: var(--color-acento);
+  }
+ 
+  .btn-read-more {
+    margin-top: 20px;
+    display: inline-block;
+    background: var(--color-navy);
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 15px;
+    padding: 20px 60px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+ 
+  .btn-read-more:hover {
+    background: var(--color-acento);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(108, 92, 231, 0.4);
+  }
+ 
+  @media (max-width: 950px) {
+    .about {
+      padding: 60px 30px 80px;
+      justify-content: center;
+      text-align: center;
+    }
+    .about-content h2 {
+      font-size: 40px;
+    }
+    .btn-read-more {
+      width: 100%;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">&lt;/&gt;</div>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#uses">Uses</a></li>
+      <li><a href="contacto.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+        
+      <h1>Soy David<span class="dot">.</span></h1>
+      <p>
+        I make elegantly professional <strong>web</strong> apps and <strong>flutter</strong> apps
+        for a living and also design <strong>user experiences</strong>. If you want
+        me to do any one of these for you, get in touch with me here.
+      </p>
+      <div class="buttons">
+          <!-- Redirige a la página de información -->
+        <a href="contacto.html">
+        <button class="btn btn-primary">Learn More</button>
+        </a>
+        
+        <a href="contacto.html">
+            <button class="btn btn-secondary">Contact Me</button>
+        </a>
+      </div>
+
+      <div class="socials">
+        <div class="social-icon">✉</div>
+        <div class="social-icon">📷</div>
+        <div class="social-icon">H</div>
+        <div class="social-icon">🐙</div>
+        <div class="social-icon">in</div>
+      </div>
+    </div>
+
+    <div class="hero-illustration">
+      <div class="blob"></div>
+      <div class="laptop">
+        <div class="laptop-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="laptop-lines">
+          <div style="width: 90%;"></div>
+          <div style="width: 70%;"></div>
+          <div style="width: 80%;"></div>
+        </div>
+        <div class="code-arrows">
+          <span>&lt;</span>
+          <span>&gt;</span>
+        </div>
+        <div class="laptop-lines">
+          <div style="width: 95%;"></div>
+          <div style="width: 60%;"></div>
+          <div style="width: 75%;"></div>
+        </div>
+      </div>
+      <div class="person">🚶</div>
+    </div>
+  </section>
+
+  <section>
+     <!-- OLA DECORATIVA -->
+  <div class="about-wave">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path fill="#e3e2dd" d="M0,40 C240,100 480,0 720,30 C960,60 1200,110 1440,50 L1440,100 L0,100 Z"></path>
+    </svg>
+  </div>
+ 
+  <!-- ABOUT ME -->
+  <section class="about" id="about">
+    <div class="about-photo">
+      <!-- Reemplaza el src de abajo con la ruta de tu propia foto -->
+      <img src="images/foto de perfil 1.jpg" alt="Foto de perfil">
+    </div>
+ 
+    <div class="about-content">
+      <h2>ABOUT ME</h2>
+ 
+      <p>
+        As a fourth-year student, I am developing skills in knowledge-based
+        artificial intelligence, machine learning, and computer networking.
+      </p>
+ 
+      <p>
+        I am currently working on a
+        <a href="#">Migraine Tracker iOS app</a>
+        using the Swift stack (SwiftUI, SwiftData). Users are able to track
+        their migraine-related data and view insights such as their most
+        common triggers or their most effective treatments. I have also
+        completed a <a href="#">variety of other projects</a>.
+      </p>
+ 
+      <p>
+        I am seeking an entry-level role in computer science related fields.
+        I hope to become a software engineer, systems level programmer, or
+        machine learning engineer.
+      </p>
+ 
+      <button class="btn-read-more">READ MORE</button>
+    </div>
+  </section>
+
+  <footer>legal</footer>
+
+</body>
+</html>

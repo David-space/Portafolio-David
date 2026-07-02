@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de David</title>
+    <style>
+
+        /* ===== Variables de color (fáciles de cambiar) ===== */
+  :root {
+    --color-texto: #2d2d2d;
+    --color-texto-suave: #555555;
+    --color-acento: #6c5ce7; /* morado del logo y la ilustración */
+    --color-acento-hover: #5849c4;
+    --color-boton-oscuro: #2d2d2d;
+    --color-boton-oscuro-hover: #4a4a4a;
+    --color-borde: #2d2d2d;
+    --color-fondo: #ffffff;
+    --color-circulo-fondo: #f0f0f0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    overflow-x: hidden;
+  }
+
+  /* ===== NAVBAR ===== */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 80px;
+  }
+
+  .logo {
+    width: 64px;
+    height: 64px;
+    border: 2px solid var(--color-borde);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .logo:hover {
+    transform: rotate(15deg) scale(1.05);
+    color: var(--color-acento);
+    border-color: var(--color-acento);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-size: 17px;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  /* Subrayado animado al pasar el mouse */
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: var(--color-acento);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-acento);
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .seleccionado a{
+    color: #6c5ce7;
+    font-weight: bold;
+
+  }
+
+
+
+        /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .navbar, .hero, footer {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .nav-links {
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hero {
+      justify-content: center;
+      text-align: center;
+    }
+    .hero-text h1 {
+      font-size: 42px;
+    }
+    .buttons, .socials {
+      justify-content: center;
+    }
+  }
+  .logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+  }
+
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo-link">
+    <div class="logo">&lt;/&gt;</div>
+    </a>
+    <ul class="nav-links">
+      <li class="seleccionado"><a href="about.html">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#uses">Uses</a></li>
+      <li><a href="contacto.html">Contact</a></li>
+    </ul>
+  </nav>
+
+    <h1>¡Hola! Soy David Sandoval</h1>
+    <p>Estudiante de Ingeniería de Software</p>
+    <!-- Aquí probaremos tu foto más adelante -->
+</body>
+</html>
