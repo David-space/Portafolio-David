@@ -18,6 +18,10 @@
     --color-circulo-fondo: #f0f0f0;
   }
 
+  html {
+  scroll-behavior: smooth;
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -211,8 +215,8 @@
 
   .blob {
     position: absolute;
-    width: 480px;
-    height: 480px;
+    width: 90%;
+    height: 90%;
     background: var(--color-circulo-fondo);
     border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%;
     z-index: 0;
@@ -461,7 +465,7 @@
   <nav class="navbar">
     <div class="logo">&lt;/&gt;</div>
     <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#uses">Uses</a></li>
       <li><a href="contacto.html">Contact</a></li>
@@ -474,26 +478,25 @@
         
       <h1>Soy David<span class="dot">.</span></h1>
       <p>
-        I make elegantly professional <strong>web</strong> apps and <strong>flutter</strong> apps
-        for a living and also design <strong>user experiences</strong>. If you want
-        me to do any one of these for you, get in touch with me here.
+        Creo paginas <strong>web</strong> y aplicaciones en <strong>flutter</strong> de manera 
+        elegante y profesional para ganarme la vida, y también diseño <strong>experiencias de usuario</strong>. Si 
+        quieres que haga cualquiera de estas cosas para ti, ponte en contacto conmigo aquí.
       </p>
       <div class="buttons">
           <!-- Redirige a la página de información -->
-        <a href="contacto.html">
+        <a href="work.html">
         <button class="btn btn-primary">Learn More</button>
         </a>
         
         <a href="contacto.html">
-            <button class="btn btn-secondary">Contact Me</button>
+            <button class="btn btn-secondary">Contactame</button>
         </a>
       </div>
 
       <div class="socials">
         <div class="social-icon">✉</div>
-        <div class="social-icon">📷</div>
+        <div class="social-icon"><img src="images/instagram (2).png" alt="Foto de perfil"></div>
         <div class="social-icon">H</div>
-        <div class="social-icon">🐙</div>
         <div class="social-icon">in</div>
       </div>
     </div>
@@ -539,7 +542,7 @@
     </div>
  
     <div class="about-content">
-      <h2>ABOUT ME</h2>
+      <h2>SOBRE MI</h2>
  
       <p>
         As a fourth-year student, I am developing skills in knowledge-based
@@ -561,7 +564,7 @@
         machine learning engineer.
       </p>
  
-      <button class="btn-read-more">READ MORE</button>
+      <button class="btn-read-more">MI TRABAJO</button>
     </div>
   </section>
 
