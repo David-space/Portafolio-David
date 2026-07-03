@@ -8,14 +8,14 @@
   /* ===== Variables de color (fáciles de cambiar) ===== */
   :root {
     --color-texto: #2d2d2d;
-    --color-texto-suave: #555555;
-    --color-acento: #6c5ce7; /* morado del logo y la ilustración */
+    --color-texto-suave: #6b6b76;       /* antes #555555, más claro y con un toque azulado */
+    --color-acento: #6c5ce7;            /* morado del logo y la ilustración */
     --color-acento-hover: #5849c4;
-    --color-boton-oscuro: #2d2d2d;
-    --color-boton-oscuro-hover: #4a4a4a;
-    --color-borde: #2d2d2d;
-    --color-fondo: #ffffff;
-    --color-circulo-fondo: #f0f0f0;
+    --color-boton-oscuro: #37344a;      /* antes #2d2d2d puro, ahora con un toque de morado mezclado */
+    --color-boton-oscuro-hover: #4a4460;
+    --color-borde: #37344a;
+    --color-fondo: #fbfaff;             /* antes blanco puro, ahora un blanco con tibieza lavanda */
+    --color-circulo-fondo: #f1eefb;     /* antes gris #f0f0f0, ahora lavanda muy suave */
   }
 
   html {
@@ -30,7 +30,8 @@
 
   body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background: var(--color-fondo);
+    background: #f5f5fa;
+    background: radial-gradient(circle at 80% 10%, #f4f1fd 0%, var(--color-fondo) 45%);
     color: var(--color-texto);
     overflow-x: hidden;
   }
@@ -152,7 +153,7 @@
   }
 
   .btn-primary {
-    background: var(--color-boton-oscuro);
+    background: #3d3a52;
     color: #fff;
     border-color: var(--color-boton-oscuro);
   }
@@ -336,12 +337,12 @@
   /* ===== ABOUT ME SECTION ===== */
   :root {
     --color-navy: #2b3a55;
-    --color-fondo-about: #e3e2dd;
+    --color-fondo-about: #ffffff;
   }
  
   .about-wave {
     position: relative;
-    background: #3d3a52;
+    background: transparent;
     height: 130px;
     width: 100%;
   }
@@ -369,7 +370,7 @@
     width: 420px;
     max-width: 100%;
     aspect-ratio: 3 / 4;
-    border-radius: 4px;
+    border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -530,7 +531,7 @@
      <!-- OLA DECORATIVA -->
   <div class="about-wave">
     <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-      <path fill="#e3e2dd" d="M0,40 C240,100 480,0 720,30 C960,60 1200,110 1440,50 L1440,100 L0,100 Z"></path>
+      <path fill="#fff" d="M0,40 C240,100 480,0 720,30 C960,60 1200,110 1440,50 L1440,100 L0,100 Z"></path>
     </svg>
   </div>
  
@@ -566,6 +567,13 @@
  
       <button class="btn-read-more">MI TRABAJO</button>
     </div>
+  </section>
+
+  <section class="mi-skills" id="mi-skills">
+    <div>
+      
+    </div>
+
   </section>
 
   <footer>legal</footer>
