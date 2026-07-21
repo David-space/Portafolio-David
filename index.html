@@ -118,7 +118,7 @@
   <!---- SERVICES SECTION ---->
   <section class="services" id="services">
       <div class="services-container">
-        <div class="services-label">LO QUE OFRESCO</div>
+        <div class="services-label">LO QUE OFREZCO</div>
         <div class="services-tittle">Mis Servicios</div>
 
         <div class="services-grid">
@@ -164,9 +164,30 @@
 
     </div>
   </section>
+
+   <!-- Contenedor único: Sobre mí + ola de salida comparten el mismo degradado -->
+    <div class="about-wrapper">
+      <!-- OLA DE ENTRADA CORREGIDA: Ahora está dentro del wrapper y usa relleno blanco -->
+      <div class="about-wave-top">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <!-- Rellenamos la parte superior con el color blanco de la sección de servicios -->
+      <path fill="#ffffff" d="M0,40 C240,100 480,0 720,30 C960,60 1200,100 1440,50 L1440,0 L0,0 Z"></path>
+    </svg>
+  </div>
+
  
   <!-- ABOUT ME -->
   <section class="about" id="about">
+    <!-- Burbujas decorativas de fondo (igual que en el hero) -->
+     <div class="about-bubbles">
+     <span class="bubble ab1"></span>
+     <span class="bubble ab2"></span>
+     <span class="bubble ab3"></span>
+     <span class="bubble ab4"></span>
+     <span class="bubble ab5"></span>
+    </div>
+
+    <div class="about-container">
     <div class="about-photo">
       <!-- Reemplaza el src de abajo con la ruta de tu propia foto -->
       <img src="images/foto de perfil 1.jpg" alt="Foto de perfil">
@@ -176,38 +197,39 @@
       <h2>SOBRE MI</h2>
  
       <p>
-        Soy estudiante de Ingeniería de Software enfocado en el desarrollando 
-        de aplicaciones móviles, lógica de programación, desarrollo web y gestión de bases de datos.
+        Soy estudiante de Ingeniería de Software enfocado en el 
+        diseño y desarrollo de aplicaciones móviles y soluciones web eficientes. 
+        Combino mi formación académica con el aprendizaje autónomo para construir productos de calidad, 
+        estructurados bajo buenas prácticas de programación.
       </p>
  
       <p>
-        Actualmente estoy trabajando en en  
-        using the Swift stack (SwiftUI, SwiftData). Users are able to track
-        their migraine-related data and view insights such as their most
-        common triggers or their most effective treatments. I have also
-        completed a <a href="#">variety of other projects</a>.
+        Actualmente me especializo en el desarrollo móvil utilizando Flutter y Dart, 
+        creando interfaces intuitivas y optimizadas. También tengo bases sólidas en lógica de programación 
+        y bases de datos, lo que me permite abordar los proyectos desde una perspectiva integral.
       </p>
  
       <p>
-        I am seeking an entry-level role in computer science related fields.
-        I hope to become a software engineer, systems level programmer, or
-        machine learning engineer.
+        Me considero un desarrollador autodidacta y detallista, siempre buscando aprender nuevas herramientas 
+        para mejorar el rendimiento de mis aplicaciones.
       </p>
 
       <a href="#work">
             <button class="btn-read-more">MI TRABAJO</button>
         </a>
     </div>
+    </div>
   </section>
 
   <section>
-     <!-- OLA DECORATIVA -->
-  <div class="about-wave-2">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-      <path fill="#fbfaff" d="M0,40 C240,100 480,0 720,30 C960,60 1200,110 1440,50 L1440,100 L0,100 Z"></path>
-    </svg>
-  </div>
+    <!-- OLA DE SALIDA hacia Skills: comparte el degradado del wrapper -->
+    <div class="about-wave-out">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path fill="#fbfaff" d="M0,40 C240,100 480,0 720,30 C960,60 1200,110 1440,50 L1440,100 L0,100 Z"></path>
+      </svg>
+    </div>
   </section>
+  </div> <!-- fin about-wrapper -->
 
    <!-- MY SKILLS -->
   <section class="skills" id="skills">
@@ -342,7 +364,7 @@
 
   <section>
       <!-- OLA DECORATIVA -->
-  <div class="about-wave">
+  <div class="skills-wave">
     <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
       <path fill="#fff" d="M0,40 C240,100 480,0 720,30 C960,60 1200,110 1440,50 L1440,100 L0,100 Z"></path>
     </svg>
@@ -385,7 +407,7 @@
       <!-- Proyecto 2 -->
       <a class="project-card" href="#hero" target="_blank">
         <div class="project-thumb">
-          <img src="images/captura portafolio.png" alt="Captura del proyecto Web Portfolio">
+          <img src="images/Imagen portafolio.png" alt="Captura del proyecto Web Portfolio">
           <span class="project-status">Publicado</span>
         </div>
         <div class="project-body">
@@ -431,95 +453,128 @@
     </div>
   </section>
 
-  <section>
-      <!-- OLA DECORATIVA: el degradado solo vive dentro de la curva -->
-  <div class="contact-wave">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="contactGradient" x1="0%" y1="0%" x2="100%" y2="50%">
-          <stop offset="0%" stop-color="#3557e0"/>
-          <stop offset="55%" stop-color="#6c5ce7"/>
-          <stop offset="100%" stop-color="#8b5cf6"/>
-        </linearGradient>
-      </defs>
-      <path fill="url(#contactGradient)" d="M0,75 C240,95 480,55 720,80 C960,100 1200,50 1440,75 L1440,100 L0,100 Z"></path>
-    </svg>
-  </div>
-  </section>
 
-  <!---- CONTACTO ---->
-  <section class="contact" id="contact">
-    <div class="contact-card">
+  <!-- CONTENEDOR UNIFICADO PARA EL FONDO DEL FOOTER Y CONTACTO -->
 
-      <!-- Columna izquierda: info -->
-      <div class="contact-info">
-        <h1>Ponte en <span class="dot">contacto</span></h1>
+  <div class="footer-wrapper">
 
-        <div class="contact-field">
-          <span class="contact-label">Email:</span>
-          <p>fortalece.david@gmail.com</p>
-        </div>
+    <!-- OLA DE ENTRADA AL FOOTER (Fondo morado abajo, blanco arriba) -->
+     <div class="contact-wave">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="contactGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#3557e0"/>
+            <stop offset="55%" stop-color="#6c5ce7"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#contactGradient)" d="M0,40 C240,100 480,0 720,30 C960,60 1200,100 1440,50 L1440,100 L0,100 Z"></path>
+      </svg>
+     </div>
 
-        <div class="contact-field">
-          <span class="contact-label">Teléfono:</span>
-          <p>+57 3113832637</p>
-        </div>
+     <!---- SECCIÓN CONTACTO ---->
+     <section class="contact" id="contact">
+      <div class="contact-card">
 
-        <div class="contact-field">
-          <span class="contact-label">Ubicación:</span>
-          <p>San Francisco, CA<br>Estados Unidos</p>
-        </div>
+        <!-- Columna izquierda: info -->
+         <div class="contact-info">
+          <h1>Ponte en <span class="dot">Contacto</span></h1>
 
-        <div class="contact-field">
-          <span class="contact-label">Sígueme</span>
-          <div class="contact-socials">
-            <a href="#" class="contact-social" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="1"/></svg>
-            </a>
-            <a href="#" class="contact-social" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 8h2V5h-2a4 4 0 0 0-4 4v2H9v3h2v6h3v-6h2.2l.8-3H14V9a1 1 0 0 1 1-1z"/></svg>
-            </a>
-            <a href="#" class="contact-social" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7" y1="10" x2="7" y2="17"/><circle cx="7" cy="7" r="0.6" fill="currentColor"/><path d="M11 17v-4.5a2 2 0 0 1 4 0V17"/><line x1="11" y1="10" x2="11" y2="17"/></svg>
-            </a>
-            <a href="#" class="contact-social" aria-label="X">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M20 4L4 20"/></svg>
-            </a>
+          <div class="contact-field">
+            <span class="contact-label">Email:</span>
+            <p>fortalece.david@gmail.com</p>
           </div>
-        </div>
+
+          <div class="contact-field">
+            <span class="contact-label">Teléfono:</span>
+            <p>+57 3113832637</p>
+          </div>
+          
+          <div class="contact-field">
+            <span class="contact-label">Ubicación</span>
+            <p>Tauramena, Casanare <br>Colombia</p>
+          </div>
+
+          <div class="contact-field">
+            <span class="contact-label">Sígueme</span>
+            <div class="contact-socials">
+              <a href="#" class="contact-social" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+              </a>
+              <a href="#" class="contact-social" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7" y1="10" x2="7" y2="17"/><circle cx="7" cy="7" r="0.6" fill="currentColor"/><path d="M11 17v-4.5a2 2 0 0 1 4 0V17"/><line x1="11" y1="10" x2="11" y2="17"/></svg>
+              </a>
+              <a href="#" class="contact-social" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+              <a href="#" class="contact-social" aria-label="X">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M20 4L4 20"/></svg>
+              </a>
+            </div>
+          </div>
+         </div>
+
+         <!-- Columna derecha: formulario de la imagen -->
+          <form class="contact-form" action="#" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="Tu@correo.com" required>
+              </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="telefono">Número telefónico</label>
+                  <input type="text" name="telefono" id="telefono" placeholder="Tu número..." required>
+                </div>
+                <div class="form-group">
+                  <label for="asunto">Asunto</label>
+                  <input type="text" name="asunto" id="asunto" placeholder="Value">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="mensaje">Mesanje</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+              </div>
+
+              <button class="btn-send" id="submit">Enviar</button>
+          </form>
       </div>
+     </section>
 
-      <!-- Columna derecha: formulario -->
-      <form class="contact-form" action="#" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="nombre">Tu nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
-          </div>
-          <div class="form-group">
-            <label for="telefono">Numero telefonico</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Tu numero..." required>
-          </div>
+     <!---- FOOTER ---->
+     <footer class="main-footer">
+      <div class="footer-container">
+        <ul class="footer-nav">
+          <li><a href="#hero"><span class="f-icon">🏠</span> Home</a></li>
+          <li><a href="#services"><span class="f-icon">📞</span> Servicios</a></li>
+          <li><a href="#about"><span class="f-icon">👤</span> Sobre mí</a></li>
+          <li><a href="#work"><span class="f-icon">💼</span> Mis Proyectos</a></li>
+        </ul>
+
+        <!-- Redes sociales circulares del footer -->
+         <div class="footer-socials">
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7" y1="10" x2="7" y2="17"/><circle cx="7" cy="7" r="1" fill="currentColor"/><path d="M11 17v-4.5a2 2 0 0 1 4 0V17"/><line x1="11" y1="10" x2="11" y2="17"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
         </div>
 
-        <div class="form-group">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe algo..." required></textarea>
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+          <p>Terms of Service - Privacy Policy</p>
         </div>
 
-        <button type="submit" class="btn-send">Enviar mensaje</button>
-      </form>
+      </div>
+     </footer>
 
-    </div>
-  </section>
-
-
-
-  <footer>legal</footer>
+  </div>
 
   <script>
 
