@@ -489,7 +489,7 @@
   }
 
   .services-container {
-    padding: 80px 100px 150px;
+    padding: 80px 100px 120px;
     max-width: 1600px;
     margin: 0 auto;
   }
@@ -565,7 +565,7 @@
   /* Adaptación para dispositivos móviles */
   @media (max-width: 950px) {
     .services-container {
-      padding: 60px 30px 20px;
+      padding: 70px 30px 70px;
     }
     .services-grid {
       grid-template-columns: 1fr; /* Pasa a una sola columna en pantallas pequeñas */
@@ -917,17 +917,15 @@
   }
  
   @media (max-width: 700px) {
+    .skills-items {
+      padding: 0px 30px 0px;
+    }
     .skills {
       padding: 50px 0px 80px;
     }
     .skills-grid {
       grid-template-columns: repeat(1, 1fr);
-    }
-  }
- 
-  @media (max-width: 480px) {
-    .skills-grid {
-      grid-template-columns: 1fr;
+      padding: 0px 10px 0px;
     }
   }
 
@@ -936,7 +934,7 @@
   /* ===== WORK / PROYECTOS SECTION ===== */
   .work {
     background: #ffffff;
-    margin-bottom: 140px;
+    margin-bottom: 130px;
   }
 
   .work-items{
@@ -1099,11 +1097,15 @@
   }
  
   @media (max-width: 950px) {
+    .work-items {
+      padding: 150px 30px 120px;
+    }
     .work {
-      padding: 40px 0px 70px;
+      margin-bottom: 60px;
     }
     .work-grid {
       grid-template-columns: 1fr;
+      width: 100%;
     }
   }
 
@@ -1153,7 +1155,7 @@
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
 
     /* ESTO HACE QUE SOBRESALGA DE LA OLA HACIA ARRIBA */
-    margin-top: -200px;
+    margin-top: -190px;
   }
 
   .contact-info h1 {
@@ -1239,7 +1241,7 @@
   .form-group textarea {
     background: #ffffff;
     border: 1px solid #e2e8f0; /* Bordes sutiles y limpios como la imagen */
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 14px 18px;
     font-size: 14px;
     color: var(--color-texto);
@@ -1267,7 +1269,7 @@
     font: 15px;
     padding: 16px;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
     cursor: pointer;
     transition: all 0.25s ease;
   }
@@ -1275,6 +1277,7 @@
   .btn-send:hover {
     background: #7B5ADE;
     transform: translateY(-2px);
+    box-shadow: 0 10px 18px rgba(71, 63, 134, 0.5);
   }
 
   /* ===== DISEÑO DE FOOTER ===== */
@@ -1298,7 +1301,7 @@
     justify-content: center;
     gap: 40px;
     list-style: none;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
   }
 
