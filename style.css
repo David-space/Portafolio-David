@@ -1280,7 +1280,34 @@
     box-shadow: 0 10px 18px rgba(71, 63, 134, 0.5);
   }
 
-  /* ===== DISEÑO DE FOOTER ===== */
+
+
+  /* ===== Animation button ===== */
+
+ /* Animación suave para la sección del formulario */
+#miFormulario {
+  transition: background-color 0.8s ease, padding 0.5s ease;
+  border-radius: 8px; /* Para que si cambia de color, se vea estético */
+}
+
+/* Esta clase se activará solo en el contenedor del formulario */
+#miFormulario.envio-exitoso {
+  background-color: rgba(46, 204, 113, 0.2); /* Un verde sutil transparente que combina con tu fondo morado */
+  border: 1px solid #2ecc71;
+  padding: 20px;
+}
+
+/* Estilos específicos para el estado del botón sin alterar otros botones */
+#btnEnviar.enviado {
+  background-color: #27ae60 !important;
+  color: white !important;
+  border: 1px solid white !important;
+  cursor: default;
+}
+  
+
+
+/* ===== DISEÑO DE FOOTER ===== */
   .main-footer{
     width: 100%;
     padding: 40px 100px 50px;
