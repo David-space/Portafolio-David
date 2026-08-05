@@ -443,12 +443,12 @@
       <!-- Proyecto 3 -->
       <a class="project-card" href="#" target="_blank">
         <div class="project-thumb">
-          <img src="images/proyecto-3.jpg" alt="Captura del proyecto App Flutter">
-          <span class="project-status">Caso de estudio</span>
+          <img src="images/Pagina recetas-1.png" alt="Captura del proyecto App Flutter">
+          <span class="project-status">EN DESARROLLO</span>
         </div>
         <div class="project-body">
-          <h3>App de Gestión en Flutter</h3>
-          <p>Aplicación multiplataforma para organizar tareas diarias, con sincronización en la nube.</p>
+          <h3>Sitio Web De Recetas</h3>
+          <p>Diseño y desarrollo de sitio web para una pagina de reposteria.</p>
           <div class="project-tags">
             <span class="project-tag">Flutter</span>
             <span class="project-tag">Firebase</span>
@@ -528,7 +528,7 @@
          </div>
 
          <!-- Columna derecha: formulario de la imagen -->
-          <form class="contact-form" action="#" method="POST">
+          <form class="contact-form" id="miFormulario">
             <div class="form-row">
               <div class="form-group">
                 <label for="nombre">Nombre</label>
@@ -554,7 +554,7 @@
                 <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
               </div>
 
-              <button class="btn-send" id="submit">Enviar</button>
+              <button class="btn-send" id="btnEnviar">Enviar</button>
           </form>
       </div>
      </section>
@@ -613,6 +613,45 @@
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', cerrarMenu);
     });
+
+    // Funcionalidad para el formulario 
+
+    const formulario = document.getElementById('miFormulario');
+  const boton = document.getElementById('btnEnviar');
+
+  formulario.addEventListener('submit', async (e) => {
+    e.preventDefault(); 
+
+    boton.textContent = 'Enviando...';
+    boton.disabled = true;
+
+    const datosFormulario = new URLSearchParams(new FormData(formulario));
+
+    try {
+      const respuesta = await fetch('http://localhost:3000/enviar-correo', {
+        method: 'POST',
+        body: datosFormulario
+      });
+
+      if (respuesta.ok) {
+        // Aplica el efecto verde sutil SOLO al bloque del formulario
+        formulario.classList.add('envio-exitoso'); 
+        boton.textContent = '¡Enviado con éxito!';             
+        boton.classList.add('enviado');              
+        formulario.reset();                           
+      } else {
+        alert('Hubo un problema en el servidor.');
+        boton.textContent = 'Enviar Mensaje';
+        boton.disabled = false;
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('No se pudo conectar con el servidor backend.');
+      boton.textContent = 'Enviar Mensaje';
+      boton.disabled = false;
+    }
+  });
+  
   </script>
 
 </body>
