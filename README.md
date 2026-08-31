@@ -1,2 +1,0 @@
-# Portafolio-David
-Mi portafolio
